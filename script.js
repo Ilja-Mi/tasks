@@ -11,7 +11,6 @@ async function loadTasks(){
     const data = await res.json();
 
     const list = document.getElementById("taskList");
-    list.innerHTML = "";
 
     data.forEach(task => {
 
