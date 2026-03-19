@@ -33,16 +33,15 @@ async function loadTasks(){
 async function addTask(){
 
     const input = document.getElementById("taskInput");
-    const text = input.value;
 
-    if(!text) return;
+    if(!input.value) return;
 
     await fetch(API,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
         },
-        body: JSON.stringify({text:text})
+        body: JSON.stringify({text:input.value})
     });
 
     input.value="";
